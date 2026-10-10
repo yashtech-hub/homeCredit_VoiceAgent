@@ -79,4 +79,4 @@ Name: Chigullapally Yashwanth
 ## Submission Links
 
 - Published agent: https://agent.retellai.com/orb/agent_4404182539bfdd00b3cf119a57?token=e6313c2809834e447f41e574b0665d88
-- Screen recording: [Add your actual Google Drive link]
+- Screen recording: https://drive.google.com/file/d/1HT1cysW9GCTSCv4IBODEIp1ExsL54fW7/view?usp=sharing
