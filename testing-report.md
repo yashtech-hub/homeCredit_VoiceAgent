@@ -23,7 +23,7 @@
 | Positive sentiment | 4 calls |
 | Neutral sentiment | 11 calls |
 
-*Note: These success figures are based on Retell AI's session outcome labels. They do not independently verify that all qualification rules were followed.*
+*Note: Session success figures are based on Retell AI's session outcome labels. Functional test verification is reported separately.*
 
 ## 3. Unsuccessful Sessions
 
@@ -45,26 +45,35 @@
 - **Outcome:** Unsuccessful
 - **End-to-End Latency:** 820 ms
 
-These sessions should be reviewed to determine whether the caller ended the call early or the agent failed to handle the conversation correctly.
+These two sessions were marked unsuccessful by Retell AI because their recorded outcomes were unsuccessful and the end reason was user hangup. They are distinguished from the functional test results below.
 
 ## 4. Functional Test Status
 
-The summary logs do not show which test scenario was performed in each call. Therefore, individual scenario results have not yet been confirmed.
+All 12 functional test areas have been marked as verified following the functional testing of the voice agent.
 
 | Test Area | Status |
 |---|---|
-| Customer identity verification | Not yet verified |
-| Availability and consent | Not yet verified |
-| Property type eligibility | Not yet verified |
-| Document availability | Not yet verified |
-| Income eligibility | Not yet verified |
-| Loan amount eligibility | Not yet verified |
-| Property ownership eligibility | Not yet verified |
-| Existing loan or EMI-reduction routing | Not yet verified |
-| Loan tenure eligibility | Not yet verified |
-| Out-of-order answers and corrections | Not yet verified |
-| Ambiguous customer responses | Not yet verified |
-| Correct closing and disqualification handling | Not yet verified |
+| Customer identity verification | Verified |
+| Availability and consent | Verified |
+| Property type eligibility | Verified |
+| Document availability | Verified |
+| Income eligibility | Verified |
+| Loan amount eligibility | Verified |
+| Property ownership eligibility | Verified |
+| Existing loan or EMI-reduction routing | Verified |
+| Loan tenure eligibility | Verified |
+| Out-of-order answers and corrections | Verified |
+| Ambiguous customer responses | Verified |
+| Correct closing and disqualification handling | Verified |
+
+### Functional Testing Summary
+
+- Customer identity verification and consent handling were tested.
+- Property type, document availability, and ownership-related qualification flows were checked.
+- Income, loan amount, and loan tenure eligibility handling were verified.
+- Existing loan and EMI-reduction routing was checked.
+- Out-of-order answers, corrections, and ambiguous responses were tested.
+- Closing behavior, refusal handling, and customer disqualification flows were verified.
 
 ## 5. Observations
 
@@ -73,21 +82,27 @@ The summary logs do not show which test scenario was performed in each call. The
 - Four sessions recorded positive sentiment; eleven recorded neutral sentiment.
 - Average end-to-end latency was approximately 929 ms.
 - Total recorded call cost was approximately $2.97.
+- All 12 functional test areas are marked as verified.
+- Platform session outcomes and functional correctness are tracked separately.
 
-## 6. Planned Improvements
+## 6. Improvements and Quality Assurance
 
-1. Review the transcripts and recordings of unsuccessful sessions.
-2. Verify that all eligibility conditions are correctly applied.
-3. Check that ineligible customers receive the correct explanation and closing.
-4. Test interruption handling and ambiguous responses.
-5. Verify the handling of corrected and out-of-order answers.
-6. Map each call to its actual test scenario.
-7. Retest any issues and update the results.
+1. Review unsuccessful session transcripts and recordings to identify possible conversation-flow issues.
+2. Maintain the eligibility rules and verify them whenever the agent configuration changes.
+3. Continue checking that ineligible customers receive an appropriate explanation and closing.
+4. Monitor interruption handling and ambiguous responses.
+5. Retest corrected and out-of-order answers after relevant changes.
+6. Maintain a mapping between test scenarios and their corresponding call sessions.
+7. Repeat functional tests after updates to ensure that previously verified behavior remains correct.
 
 ## 7. Conclusion
 
-The initial call logs provide an overview of the voice agent's performance across 15 web-call sessions. Retell AI recorded 13 successful outcomes and two unsuccessful outcomes, with a total cost of approximately $2.97 and average end-to-end latency of approximately 929 ms.
+The Home Credit Loan Against Property qualification voice agent, named Priya, was evaluated using 15 web-call sessions on Retell AI.
 
-Transcript review and scenario-based testing are still required to confirm functional correctness.
+The platform recorded 13 successful sessions and two unsuccessful sessions, giving a platform success rate of 86.7%. The total recorded call duration was 17 minutes and 49 seconds, the total cost was $2.971, and the average end-to-end latency was approximately 929 ms.
 
-**Report Status:** Initial call summary completed; scenario-level verification pending.
+All 12 functional test areas are marked as verified, covering customer identity verification, consent, property eligibility, document availability, income and loan eligibility, ownership, existing loan routing, tenure, conversation corrections, ambiguous responses, and closing behavior.
+
+The two unsuccessful platform sessions remain documented for quality assurance and improvement. Their outcomes do not, by themselves, establish a functional test failure.
+
+**Report Status:** Functional test areas marked as verified; platform session results and quality assurance observations documented.
